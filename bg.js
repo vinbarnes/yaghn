@@ -50,7 +50,7 @@ function update() {
 
 
 function main() {
-    chrome.alarms.create({periodInMinutes: 1});
+    chrome.alarms.create({periodInMinutes: 5});
     chrome.alarms.onAlarm.addListener(update);
 
     chrome.browserAction.onClicked.addListener(function () {
