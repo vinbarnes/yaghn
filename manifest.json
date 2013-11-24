@@ -1,0 +1,19 @@
+{
+    "name": "yaghn",
+    "version": "0.1.0",
+    "description": "Yet Another GitHub Notifier. (Pronounced 'yawn'.)",
+    "background": {
+        "persistent": false,
+        "scripts": ["bg.js"]
+    },
+    "permissions": [
+        "alarms",
+        "https://github.com/"
+    ],
+    "browser_action": {
+        "default_title": "yaghn",
+        "default_icon": "default.png"
+    },
+
+    "manifest_version": 2
+}
