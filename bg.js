@@ -1,7 +1,10 @@
 (function() {
 
 var statusURL = "https://github.com/notifications";
-
+var icon = {
+    unread: {'19': 'yaghn-unread-19x19.png', '38': 'yaghn-unread-19x19@2x.png'},
+    read: {'19': 'yaghn-default-19x19.png', '38': 'yaghn-default-19x19@2x.png'}
+};
 
 function requestStatus(callback) {
     console.log("we be pollin'");
@@ -40,8 +43,8 @@ function getUnreadStatus(callback) {
 }
 
 function updateIcon(hasUnread) {
-    var icon = (hasUnread) ? "unread.png" : "default.png";
-    chrome.browserAction.setIcon({path: icon});
+    var updatedIcon = icon[(hasUnread) ? 'unread' : 'read'];
+    chrome.browserAction.setIcon({path: updatedIcon});
 }
 
 function update() {
