@@ -5,4 +5,4 @@ No unread count, just a binary indicator for unread notifications.
 
 ## TODO
 
-Two icons that don't suck.
+- [ ] ~~Two icons that don't suck.~~ Found some decent icons from wiki commons.
