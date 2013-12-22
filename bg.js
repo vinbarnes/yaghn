@@ -51,13 +51,23 @@ function update() {
     getUnreadStatus(updateIcon);
 }
 
+function findOrCreateTab(url) {
+    chrome.tabs.query({currentWindow: true, url: "*://github.com/notifications"}, function(tabs) {
+        if (tabs.length > 0) {
+            chrome.tabs.reload(tabs[0].id);
+            chrome.tabs.update(tabs[0].id, {active: true});
+        } else {
+            chrome.tabs.create({url: url, active: true});
+        }
+    });
+}
 
 function main() {
     chrome.alarms.create({periodInMinutes: 5});
     chrome.alarms.onAlarm.addListener(update);
 
     chrome.browserAction.onClicked.addListener(function () {
-        chrome.tabs.create({url: statusURL});
+        findOrCreateTab(statusURL);
     });
 
     update();
