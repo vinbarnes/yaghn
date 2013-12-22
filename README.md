@@ -6,4 +6,4 @@ No unread count, just a binary indicator for unread notifications.
 ## TODO
 
 - [x] ~~Two icons that don't suck.~~ Found some decent icons from wiki commons.
-- [ ] Don't open in a new tab if there's already a notifications tab open.
+- [x] ~~Don't open in a new tab if there's already a notifications tab open.~~ 
